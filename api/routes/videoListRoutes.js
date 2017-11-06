@@ -9,7 +9,7 @@ module.exports = function(app) {
 
 
   app.route('/videos/:videoId')
-    .get(videoList.read_a_video)
+    .get(videoList.read_a_video);
    // .put(videoList.update_a_video) //do later
     //.delete(videoList.delete_a_video); //do later
 };

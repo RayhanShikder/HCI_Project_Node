@@ -23,6 +23,8 @@ exports.create_a_video = function(req, res) {
 
 
 exports.read_a_video = function(req, res) {
+  console.log("finding a video");
+  console.log(req.params);
   Video.findById(req.params.videoId, function(err, video) {
     if (err)
       res.send(err);
