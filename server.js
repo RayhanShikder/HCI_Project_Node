@@ -3,8 +3,9 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 4000,
   mongoose = require('mongoose'),
-  Task = require('./api/models/videoListModel'), //created model loading here
-  bodyParser = require('body-parser');
+  Video = require('./api/models/videoListModel'), //created model loading here
+  bodyParser = require('body-parser'),
+  crowd = require('./api/models/crowdEntryModel');
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
