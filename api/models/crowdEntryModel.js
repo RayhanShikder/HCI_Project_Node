@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 
 
 var CrowdSchema = new Schema({
-  vedioId: {
-    type: Number
+  videoId: {
+    type: String
   },
   selectType: {
     type: String
