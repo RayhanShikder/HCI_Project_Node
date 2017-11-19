@@ -19,4 +19,8 @@ module.exports = function(app) {
     .post(crowdEntryList.create_a_crowd_entry); //do later
 
 
+  app.route('/getcrowdEntriesOfAVideo/:videoId')
+    .get(crowdEntryList.list_all_crowd_entries_of_a_video)
+    
+
 };

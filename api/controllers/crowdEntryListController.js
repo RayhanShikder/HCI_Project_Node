@@ -22,3 +22,12 @@ exports.create_a_crowd_entry = function(req, res) {
 };
 
 
+exports.list_all_crowd_entries_of_a_video = function(req, res) {
+  console.log("finding a video");
+  console.log(req.params);
+  Crowd.find({"videoId":{$eq:req.params.videoId}} , function(err, crowd) {
+    if (err)
+      res.send(err);
+      res.json(crowd);
+  });
+};
