@@ -2,6 +2,7 @@
 module.exports = function(app) {
   var videoList = require('../controllers/videoListController');
   var crowdEntryList = require('../controllers/crowdEntryListController');
+  var verifyList = require('../controllers/verifyEntryListController');
 
   // todoList Routes
   app.route('/videos')
@@ -20,7 +21,17 @@ module.exports = function(app) {
 
 
   app.route('/getcrowdEntriesOfAVideo/:videoId')
-    .get(crowdEntryList.list_all_crowd_entries_of_a_video)
+    .get(crowdEntryList.list_all_crowd_entries_of_a_video);
     
 
+  app.route('/verifications')
+    .get(verifyList.list_all_verifications)
+    .post(verifyList.create_a_verify_entry);
+
+  app.route('/verifications/:verificationId')
+    .put(verifyList.update_a_verify_entry);
+    
+  app.route('/verifications/:videoId/:crowdEntryId/:contributor')
+    .get(verifyList.read_a_verify_entry_by_video_id_and_crowd_entry_id_and_contributor); 
+    
 };

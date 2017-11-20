@@ -5,7 +5,8 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Video = require('./api/models/videoListModel'), //created model loading here
   bodyParser = require('body-parser'),
-  crowd = require('./api/models/crowdEntryModel');
+  crowd = require('./api/models/crowdEntryModel'),
+  Verify = require('./api/models/verifyModel');;
   
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
