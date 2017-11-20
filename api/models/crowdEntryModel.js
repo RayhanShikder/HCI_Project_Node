@@ -21,6 +21,10 @@ var CrowdSchema = new Schema({
   },
   time: {
     type: Number
+  },
+  flag: {
+    type: Boolean,
+    default: false
   }
 });
 
