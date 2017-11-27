@@ -1,6 +1,5 @@
 'use strict';
 
-
 var mongoose = require('mongoose'),
   Crowd = mongoose.model('Crowd');
 
