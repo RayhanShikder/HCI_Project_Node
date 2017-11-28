@@ -62,6 +62,12 @@ module.exports = function(app) {
     .get(learnerSourcAnswerList.list_all_learner_source_answers)
     .post(learnerSourcAnswerList.create_a_learner_source_answer);
 
+  app.route('/learnerSourceAnswers/:video_id/:learner_source_question_id/:contributor')
+    .get(learnerSourcAnswerList.read_a_learner_source_answer_entry_by_video_id_and_learner_source_question_id_and_contributor); 
+
+  app.route('/learnerSourceAnswers/:learner_source_answer_id')
+    .put(learnerSourcAnswerList.update_a_learner_source_answer_entry);
+    
   app.route('/getLearnerSourceAnswersOfAVideo/:videoId')
     .get(learnerSourcAnswerList.list_all_learner_source_answers_of_a_video);
 };

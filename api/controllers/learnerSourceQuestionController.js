@@ -24,7 +24,7 @@ exports.create_a_learner_source_question = function(req, res) {
 exports.list_all_learner_source_questions_of_a_video = function(req, res) {
   console.log("finding learnerSourceQuestions of a video");
   console.log(req.params);
-  LearnerSourceQuestion.find({"videoId":{$eq:req.params.videoId}} , function(err, learnerSourceQuestion) {
+  LearnerSourceQuestion.find({"video_id":{$eq:req.params.videoId}} , function(err, learnerSourceQuestion) {
     if (err)
       res.send(err);
       res.json(learnerSourceQuestion);

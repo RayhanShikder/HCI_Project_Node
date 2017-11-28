@@ -27,8 +27,7 @@ var VerifySchema = new Schema({
     default: -1
   },
   contributor: {
-    type: String,
-    default: "_turker"
+    type: String
   }
 });
 
