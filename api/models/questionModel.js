@@ -9,22 +9,28 @@ var QuestionSchema = new Schema({
   },
   type: {
     type: String,  
-    required: 'Kindly enter the type(Quant/Qual) of question'
+    required: 'Kindly enter the type(Quant/Qual/NASATLX) of question'
   },
   condition: {
     type: String,
-    required: 'Kindly enter the condition(vidSplit/FreeText/comparison/NASATLX) of question'
+    required: 'Kindly enter the condition(vidSplit/LearnerSource/Final/BOTH) of question'
   },
   question_type: {
     type: String,
     required: 'Kindly enter the question_type(MCQ/Likert/Descriptive) of question'
   },
-  asnswer_options: {
-    type: String
-  },
   question: {
     type: String,
     required: 'Kindly enter the question'
+  },
+  answer_options: {
+    type: String
+  },
+  correct_answer: {
+    type: String
+  },
+  users_answer: {
+    type: String
   },
   Created_date: {
     type: Date,

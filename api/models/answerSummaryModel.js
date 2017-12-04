@@ -3,17 +3,13 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var AnswerSchema = new Schema({
-  question_id: {
-    type: String,
-    required: 'Kindly enter the question_id'
-  },
+var AnswerSummarySchema = new Schema({
   video_id: {
     type: String
   },
   type: {
     type: String,  
-    required: 'Kindly enter the type(Quant/Qual/NASATLX) of question'
+    required: 'Kindly enter the type(Quant/Qual/NASATLX/Final) of question'
   },
   condition: {
     type: String,
@@ -21,21 +17,21 @@ var AnswerSchema = new Schema({
   },
   question_type: {
     type: String,
-    required: 'Kindly enter the question_type(MCQ/Likert/Descriptive) of question'
+    required: 'Kindly enter the question_type(MCQ/Likert/Descriptive/NASATLX_SUMMARY) of question'
   },
-  asnswer_options: {
-    type: String
+  accuracy: {
+    type: Number,
+    required: 'Kindly enter the answer(accuracy/NASATLX_WEIGHTED_VALUE)'
   },
-  question: {
+  text_answer: {
     type: String,
-    required: 'Kindly enter the question'
   },
-  answer: {
-    type: String,
-    required: 'Kindly enter the answer'
+  total_time_taken_to_answer: {
+    type: Number,
+    required: 'Kindly enter the time in seconds'
   },
-  correct_answer: {
-    type: String
+  total_time_taken_in_video: {
+    type: Number
   },
   user_id: {
     type: String,
@@ -54,4 +50,4 @@ var AnswerSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Answer', AnswerSchema);
+module.exports = mongoose.model('AnswerSummary', AnswerSummarySchema);

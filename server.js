@@ -12,6 +12,7 @@ var express = require('express'),
   Answer = require('./api/models/answerModel'),
   LearnerSourceQuestion = require('./api/models/learnerSourceQuestionModel');
   LearnerSourceAnswer = require('./api/models/learnerSourceAnswerModel');
+  AnswerSummary = require('./api/models/answerSummaryModel'),
 
   
 // mongoose instance connection url connection

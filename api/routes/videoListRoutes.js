@@ -8,6 +8,7 @@ module.exports = function(app) {
   var answerList = require('../controllers/answerController');
   var learnerSourcQuestionList = require('../controllers/learnerSourceQuestionController');
   var learnerSourcAnswerList = require('../controllers/learnerSourceAnswerController');
+  var answerSummaryList = require('../controllers/answerSummaryController');
 
   // todoList Routes
   app.route('/videos')
@@ -47,9 +48,19 @@ module.exports = function(app) {
     .get(questionList.list_all_questions)
     .post(questionList.create_a_question);
 
+  app.route('/questions/:video_id/:condition')
+    .get(questionList.list_all_questions_of_a_video_by_condition);
+
+  app.route('/questions/:video_id/:condition/:type')
+    .get(questionList.list_all_questions_of_a_video_by_condition_and_type);
+
   app.route('/answers')
     .get(answerList.list_all_answers)
     .post(answerList.create_a_answer);
+
+  app.route('/answer_summaries')
+    .get(answerSummaryList.list_all_answer_summaries)
+    .post(answerSummaryList.create_a_answer_summary);
 
   app.route('/learnerSourceQuestions')
     .get(learnerSourcQuestionList.list_all_learner_source_questions)

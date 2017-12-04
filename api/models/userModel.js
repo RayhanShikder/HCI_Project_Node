@@ -25,6 +25,18 @@ var UserSchema = new Schema({
   major: {
     type: String
   },
+  video1:{
+    type: String
+  },
+  condition1:{
+    type: String
+  },
+  video2: {
+    type: String
+  },
+  condition2:{
+    type: String
+  },
   Created_date: {
     type: Date,
     default: Date.now
