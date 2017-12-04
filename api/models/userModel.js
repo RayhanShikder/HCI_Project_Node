@@ -41,6 +41,10 @@ var UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  creation_status:{
+    type: String,
+    default: 'created'
+  },
   status: {
     type: [{
       type: String,

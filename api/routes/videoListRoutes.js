@@ -44,6 +44,14 @@ module.exports = function(app) {
     .get(userList.list_all_users)
     .post(userList.create_a_user);
 
+app.route('/users/:user_id')
+    .get(userList.get_a_user_by_user_id)
+    .put(userList.update_a_user_entry);
+
+app.route('/user_by_status/:status')
+    .get(userList.get_users_by_status);
+
+
   app.route('/questions')
     .get(questionList.list_all_questions)
     .post(questionList.create_a_question);
