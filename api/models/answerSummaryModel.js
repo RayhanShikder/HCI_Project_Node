@@ -19,6 +19,10 @@ var AnswerSummarySchema = new Schema({
     type: String,
     required: 'Kindly enter the question_type(MCQ/Likert/Descriptive/NASATLX_SUMMARY) of question'
   },
+  question: {
+    type: String,
+     default: ''
+  },
   accuracy: {
     type: Number,
     required: 'Kindly enter the answer(accuracy/NASATLX_WEIGHTED_VALUE)'
